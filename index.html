@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CricXpert - Join Now</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1044581424399365');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1044581424399365&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: url('https://i.imgur.com/TjEYb05.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .center-box {
+      background: rgba(0,0,0,0.54);
+      margin-top: 38px;
+      padding: 32px 14px 24px 14px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 32px #0003;
+      width: 93%;
+      max-width: 370px;
+    }
+    .main-title { font-size: 2rem; font-weight: bold; margin-bottom: 9px; letter-spacing: 1px; }
+    .timer { font-size: 2.5rem; font-weight: bold; margin: 13px 0 0 0; }
+    .timer-label { font-size: 1.15rem; font-weight: 400; color: #ddd; margin-bottom: 15px; }
+    .profile-img-link { display: inline-block; border-radius: 50%; border: 4px solid #22c55e; box-shadow: 0 2px 10px #2226; transform: scale(1.03); }
+    .profile-img { width: 145px; height: 145px; object-fit: cover; border-radius: 50%; display: block; }
+    .join-btn {
+      display: inline-block;
+      color: white;
+      padding: 13px 34px;
+      font-size: 1.15rem;
+      margin: 13px 0 8px 0;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      border: 3px solid red;
+      background-color: red;
+    }
+    .join-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px red; }
+    .info-msg { color: #fff; background: rgba(14,36,24,0.77); padding: 5px 13px 6px 13px; border-radius: 9px; margin-bottom: 6px; font-size: 1.02rem; }
+    .hindi-msg { font-size: 0.95rem; margin-top: 2px; color: #ffe28e; }
+    .disclaimer { color: #f1f1f1; font-size: 0.78rem; padding: 21px 6px 7px 6px; line-height: 1.27; opacity: 0.80; text-align: center; }
+    .footer { font-size: 0.85rem; text-align: center; margin-top: 10px; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div class="center-box">
+    <div class="main-title">CricXpert</div>
+    <div id="timer" class="timer">27</div>
+    <div class="timer-label">Seconds Left</div>
+
+    <a href="https://telegram.me/+bsFrFY-TUbYyYTI1" target="_blank" class="profile-img-link" aria-label="Telegram channel link">
+      <img src="https://i.imgur.com/Wo6Bc3e.jpeg" alt="Logo Image" class="profile-img" />
+    </a>
+
+    <a href="https://telegram.me/+bsFrFY-TUbYyYTI1" class="join-btn" id="joinBtn" target="_blank">
+      JOIN THE CHANNEL NOW <span>&#128073;</span>
+    </a>
+
+    <div class="info-msg">
+      Stay informed, not just lucky <span>&#128293;&#129345;</span>
+    </div>
+    <div class="hindi-msg">
+      Jab sab taraf mushkil ho, tab yahan wapas aao — analysis aur updates ke saath
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    Disclaimer: This channel offers cricket updates, analysis, and general information for fun. It does not provide or promote betting or gambling, and no outcomes are guaranteed. Joining or acting on information is at your discretion—please verify independently and act responsibly.
+  </div>
+
+  <div class="footer">
+    Powered by CricXpert Team
+  </div>
+
+  <script>
+    let time = 27;
+    const timer = document.getElementById('timer');
+    const joinBtn = document.getElementById('joinBtn');
+
+    const colors = [
+      {bg: 'red', border: 'yellow'}, 
+      {bg: 'yellow', border: 'blue'}, 
+      {bg: 'blue', border: 'pink'}, 
+      {bg: 'pink', border: 'red'}
+    ];
+    let idx = 0;
+
+    const countdown = setInterval(() => {
+      time--;
+      if(time <= 0){
+        clearInterval(countdown);
+        timer.innerText = '0';
+      } else {
+        timer.innerText = time;
+      }
+
+      joinBtn.style.backgroundColor = colors[idx].bg;
+      joinBtn.style.borderColor = colors[idx].border;
+
+      idx = (idx + 1) % colors.length; 
+    }, 1000);
+  </script>
+</body>
+</html>
